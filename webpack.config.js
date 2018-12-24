@@ -17,10 +17,23 @@ module.exports = {
                         loader: "html-loader"
                     }
                 ]
-            }
+            },
+            {
+                test: /\.(s*)css$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader"
+                ]
+            },
+            { 
+                test: /\.(png|jpg|jpeg|gif|svg)$/, 
+                use: 'url-loader?limit=25000' 
+            },
         ]
     },
     devServer: {
+        //avoid the Head socket issue
         disableHostCheck: true
     },
     plugins: [
