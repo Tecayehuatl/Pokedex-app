@@ -4,4 +4,51 @@ body {
     background-color: $rojo-naranja;
     color: $blanco;
     font-family: "Arial";
+    font-size: 14px;
+}
+
+.o-wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.o-header{
+    background-color: $rojo-pastel;
+    box-shadow: 0 5px 3em $rojo-fuerte;
+    max-height: 200px;
+    padding: 1em;
+    .o-header__logo{
+        height: auto;
+        width: 100%;
+    }
+}
+
+.o-main{
+    flex: 1;
+}
+
+.o-footer{
+    background-color: $rojo-rosado;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 0 3em $rojo-fuerte;
+    .o-footer__text{
+    }
+    
+    .o-footer__link{
+        color: $blanco;
+    }
+}
+
+@media screen and (min-width: 768px){
+    body{
+        font-size: 16px;
+    }
+    
+    .o-header{
+        .o-header__logo{
+            width: 250px;
+        }
+    } 
 }
