@@ -26,6 +26,8 @@ body {
 
 .o-main{
     flex: 1;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .o-footer{
@@ -41,6 +43,63 @@ body {
     }
 }
 
+.o-container{
+    display: flex;
+    justify-content: space-between;flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lds-facebook {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.lds-facebook div {
+display: inline-block;
+position: absolute;
+left: 6px;
+width: 13px;
+background: $rojo-amanecer;
+animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+left: 6px;
+animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+left: 26px;
+animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+left: 45px;
+animation-delay: 0;
+}
+
+.c-card{
+    color: $rojo-fuerte;
+    width: 18rem;
+    margin-bottom: 1em;
+}
+@keyframes lds-facebook {
+0% {
+    top: 6px;
+    height: 51px;
+}
+50%, 100% {
+    top: 19px;
+    height: 26px;
+}
+}
+  
 @media screen and (min-width: 768px){
     body{
         font-size: 16px;
@@ -50,5 +109,9 @@ body {
         .o-header__logo{
             width: 250px;
         }
-    } 
+    }
+    
+    .o-container{
+        justify-content: space-between;
+    }
 }
