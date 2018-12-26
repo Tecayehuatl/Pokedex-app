@@ -1,7 +1,30 @@
 import React, {Component} from 'react'
+import api from '../../../../api/index'
+import PokemonItem from './PokemonItem.jsx'
 
-class Main extends Component {
+class Main extends Component {  
+    constructor(){
+        super()
+        this.state = { pokemonList: []}
+    } 
+
+    componentDidMount(){
+        /*
+            Asynchronous function, it simulates a function that takes two seconds fetching data from an "API", check the ./api/indez file
+         */
+        api.getPokemons((result)=> { 
+            this.setState({
+                pokemonList: result.result
+            })
+        })
+    }
+
     render(){
+        /*
+            trying to create an object array for rendering pokemon view, its undefined :(
+         */
+        //const pokemons = pokemonList.map((pokemon)=> <PokemonItem />)
+        
         return(
             <main className="container o-main">
                 <div className="lds-facebook" >
@@ -12,13 +35,7 @@ class Main extends Component {
                 <div className="row">
                     <div className="col-12">
                         <div className="o-container">
-                            <div className="card c-card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
+                            {/* pokemons */}
                         </div>
                     </div>
                 </div>
