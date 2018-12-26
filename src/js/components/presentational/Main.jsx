@@ -5,25 +5,27 @@ import PokemonItem from './PokemonItem.jsx'
 class Main extends Component {  
     constructor(){
         super()
-        this.state = { pokemonList: []}
+        //data()
+        this.state = { 
+            pokemonList: [],
+            isLoaded: false
+        }
     } 
 
     componentDidMount(){
         /*
-            Asynchronous function, it simulates a function that takes two seconds fetching data from an "API", check the ./api/indez file
+            Asynchronous function, it simulates a function that takes two seconds fetching data 
          */
         api.getPokemons((result)=> { 
+            console.log(result)
             this.setState({
-                pokemonList: result.result
+                pokemonList: result.results,
+                isLoaded: true
             })
         })
     }
 
     render(){
-        /*
-            trying to create an object array for rendering pokemon view, its undefined :(
-         */
-        //const pokemons = pokemonList.map((pokemon)=> <PokemonItem />)
         
         return(
             <main className="container o-main">
@@ -35,7 +37,7 @@ class Main extends Component {
                 <div className="row">
                     <div className="col-12">
                         <div className="o-container">
-                            {this.state.pokemonList.map(function(item){return <PokemonItem />})}
+                            {this.state.pokemonList.map(function(pokemonItem){ return <PokemonItem   key={pokemonItem.name} pokemonItem={pokemonItem} /> })}
                         </div>
                     </div>
                 </div>
