@@ -88,6 +88,10 @@ animation-delay: 0;
     color: $rojo-fuerte;
     width: 18rem;
     margin-bottom: 1em;
+
+    .card-title{
+        text-transform: capitalize;
+    }
 }
 @keyframes lds-facebook {
 0% {
