@@ -35,7 +35,7 @@ class Main extends Component {
                 <div className="row">
                     <div className="col-12">
                         <div className="o-container">
-                            {/* pokemons */}
+                            {this.state.pokemonList.map(function(item){return <PokemonItem />})}
                         </div>
                     </div>
                 </div>
