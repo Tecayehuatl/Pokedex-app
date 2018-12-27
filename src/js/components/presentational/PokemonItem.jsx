@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 class PokemonItem extends Component{
     render(){        
-        const pokemonItem = this.props.pokemonItem;
+        const pokemonItem = this.props.pokemonData;
         return(
             <div className="card c-card">
                 <div className="card-body">

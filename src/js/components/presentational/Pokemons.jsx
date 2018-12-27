@@ -29,7 +29,7 @@ class Pokemons extends Component{
             <div className="row">
                 <div className="col-12">
                     <div className="o-container">
-                        {this.state.pokemonList.map(function(pokemonItem){ return <PokemonItem   key={pokemonItem.name} pokemonItem={pokemonItem} /> })}
+                        {this.state.pokemonList.map(function(pokemonItem){ return <PokemonItem key={pokemonItem.name} pokemonData={pokemonItem} /> })}
                     </div>                            
                 </div>
             </div> 

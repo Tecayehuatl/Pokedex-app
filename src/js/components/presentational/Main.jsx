@@ -14,9 +14,14 @@ class Main extends Component {
                     <div></div>
                 </div> */}
                 <Switch>
+                    {/* 
+                        Routes registered, we can use them where we want 
+                    */}
                     <Route path="/" component={ Pokemons } exact/>
                     <Route path="/PokemonCard" component={ PokemonCard }/>
-                    {/* Error implementation */}
+                    {/* 
+                        Implement 'Error' view
+                    */}
                 </Switch>
               </div>
             </main>
