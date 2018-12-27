@@ -16,9 +16,10 @@ body {
 
 .o-header{
     background-color: $rojo-pastel;
-    box-shadow: 0 5px 3em $rojo-fuerte;
+    box-shadow: 0 1em 1.7em $rojo-fuerte;
     max-height: 200px;
     padding: 1em;
+    background: linear-gradient(90deg, $rojo-fuerte 0%, $rojo-amanecer 35%, $rojo-fuerte 100%); 
     .o-header__logo{
         height: auto;
         width: 100%;

@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import api from '../../../../api/index'
 import PokemonItem from './PokemonItem.jsx'
+import PokemonCard from './PokemonCard.jsx'
+import { Route, Switch, Link } from 'react-router-dom'
 
 class Main extends Component {  
     constructor(){
@@ -36,9 +38,12 @@ class Main extends Component {
                     <div className="col-12">
                         <div className="o-container">
                             {this.state.pokemonList.map(function(pokemonItem){ return <PokemonItem   key={pokemonItem.name} pokemonItem={pokemonItem} /> })}
-                        </div>
+                        </div>                            
                     </div>
                 </div>
+                <Switch>
+                    <Route path="/PokemonCard" component={ PokemonCard }/>
+                </Switch>
             </main>
         )
     }

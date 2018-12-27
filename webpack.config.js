@@ -38,7 +38,8 @@ module.exports = {
     },
     devServer: {
         //avoid the Head socket issue
-        disableHostCheck: true
+        disableHostCheck: true,
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({
