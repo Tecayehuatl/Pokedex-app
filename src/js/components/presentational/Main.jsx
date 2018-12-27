@@ -4,6 +4,7 @@ import PokemonItem from './PokemonItem.jsx'
 
 class Main extends Component {  
     constructor(){
+        super()
         //data()
         this.state = { 
             pokemonList: [],
