@@ -16,6 +16,7 @@ class Main extends Component {
                 <Switch>
                     <Route path="/" component={ Pokemons } exact/>
                     <Route path="/PokemonCard" component={ PokemonCard }/>
+                    {/* Error implementation */}
                 </Switch>
               </div>
             </main>

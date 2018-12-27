@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 class PokemonItem extends Component{
     render(){        
@@ -8,8 +9,11 @@ class PokemonItem extends Component{
                 <div className="card-body">
                     <h5 className="c-card-title card-title"><span className="bs bs-pushpin"></span> {pokemonItem.name}</h5>
                     <p className="card-text">Si quieres saber mas sobre <b>{pokemonItem.name}</b>, lo único que tienes que hacer es dar click en el botón de abajo.</p>
-                    <a className="btn btn-primary" href={pokemonItem.url} target="_blank" >
-                    <span className="bs bs-point-right"></span>  Ver detalle...</a>
+                    {/* <a className="btn btn-primary" href={pokemonItem.url} target="_blank" >
+                    <span className="bs bs-point-right"></span>  Ver detalle...</a> */}
+                    <NavLink className="btn btn-primary" to="/PokemonCard">
+                    <span className="bs bs-point-right"></span>  Ver detalle...
+                    </NavLink>
                 </div>
             </div>
         )
