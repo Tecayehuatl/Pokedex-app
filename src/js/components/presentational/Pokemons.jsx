@@ -28,6 +28,14 @@ class Pokemons extends Component{
         return(
             <div className="row">
                 <div className="col-12">
+                    {/* 
+                        Hide this loading asset when api is done 
+                    */}
+                    <div className="lds-facebook" >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                     <div className="o-container">
                         {this.state.pokemonList.map(function(pokemonItem){ return <PokemonItem key={pokemonItem.name} pokemonData={pokemonItem} /> })}
                     </div>                            
