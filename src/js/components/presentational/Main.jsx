@@ -40,10 +40,7 @@ class Main extends Component {
                             {this.state.pokemonList.map(function(pokemonItem){ return <PokemonItem   key={pokemonItem.name} pokemonItem={pokemonItem} /> })}
                         </div>                            
                     </div>
-                </div>
-                <Switch>
-                    <Route path="/PokemonCard" component={ PokemonCard }/>
-                </Switch>
+                </div>                
             </main>
         )
     }
