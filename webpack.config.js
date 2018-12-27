@@ -30,6 +30,10 @@ module.exports = {
                 test: /\.(png|jpg|jpeg|gif|svg)$/, 
                 use: 'url-loader?limit=25000' 
             },
+            { 
+                test: /\.(eot|svg|ttf|woff|woff2)$/, 
+                use: 'url-loader?limit=25000' 
+}
         ]
     },
     devServer: {

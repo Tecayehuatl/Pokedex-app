@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'icons.css';
 
 body {
     background-color: $rojo-naranja;
@@ -26,7 +27,6 @@ body {
 
 .o-main{
     flex: 1;
-    padding-top: 2em;
     padding-bottom: 2em;
 }
 
@@ -88,11 +88,13 @@ animation-delay: 0;
     color: $rojo-fuerte;
     width: 18rem;
     margin-bottom: 1em;
+    box-shadow: 0 0 2em $rojo-fuerte;
 
     .card-title{
         text-transform: capitalize;
     }
 }
+
 @keyframes lds-facebook {
 0% {
     top: 6px;
@@ -118,4 +120,14 @@ animation-delay: 0;
     .o-container{
         justify-content: space-between;
     }
+
+    .o-main{
+        padding-top: 2em;
+    }
+
+    .c-card{
+        width: 14rem;
+        min-height: 140px;
+    }
+
 }

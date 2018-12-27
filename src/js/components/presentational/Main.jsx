@@ -4,20 +4,18 @@ import PokemonItem from './PokemonItem.jsx'
 
 class Main extends Component {  
     constructor(){
-        super()
         //data()
         this.state = { 
             pokemonList: [],
             isLoaded: false
         }
     } 
-
+    
     componentDidMount(){
         /*
             Asynchronous function, it simulates a function that takes two seconds fetching data 
          */
         api.getPokemons((result)=> { 
-            console.log(result)
             this.setState({
                 pokemonList: result.results,
                 isLoaded: true
@@ -26,7 +24,6 @@ class Main extends Component {
     }
 
     render(){
-        
         return(
             <main className="container o-main">
                 <div className="lds-facebook" >
