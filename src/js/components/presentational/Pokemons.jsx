@@ -5,7 +5,6 @@ import PokemonItem from './PokemonItem.jsx'
 class Pokemons extends Component{
     constructor(){
         super()
-        //data()
         this.state = { 
             pokemonList: [],
             isLoaded: false
@@ -37,7 +36,9 @@ class Pokemons extends Component{
                         <div></div>
                     </div>
                     <div className="o-container">
-                        {this.state.pokemonList.map(function(pokemonItem){ return <PokemonItem key={pokemonItem.name} pokemonData={pokemonItem} /> })}
+                        {this.state.pokemonList.map(function(pokemonItem){ 
+                            return <PokemonItem key={pokemonItem.name} pokemonData={pokemonItem} /> 
+                        })}
                     </div>                            
                 </div>
             </div> 
