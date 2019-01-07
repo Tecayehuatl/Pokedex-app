@@ -5,17 +5,17 @@ import PokemonItem from './PokemonItem.jsx'
 class Pokemons extends Component{
     constructor(){
         super()
-        this.state = { 
+        this.state = {
             pokemonList: [],
             isLoaded: false
         }
     }
-    
+
     componentDidMount(){
         /*
-            Asynchronous function, it simulates a function that takes two seconds fetching data 
+            Asynchronous function, it simulates a function that takes two seconds fetching data
          */
-        api.getPokemons((result)=> { 
+        api.getPokemons((result)=> {
             this.setState({
                 pokemonList: result.results,
                 isLoaded: true
@@ -27,8 +27,8 @@ class Pokemons extends Component{
         return(
             <div className="row">
                 <div className="col-12">
-                    {/* 
-                        Hide this loading asset when api is done 
+                    {/*
+                        Hide this loading asset when api is done
                     */}
                     <div className="lds-facebook" >
                         <div></div>
@@ -36,12 +36,12 @@ class Pokemons extends Component{
                         <div></div>
                     </div>
                     <div className="o-container">
-                        {this.state.pokemonList.map(function(pokemonItem){ 
-                            return <PokemonItem key={pokemonItem.name} pokemonData={pokemonItem} /> 
+                        {this.state.pokemonList.map(function(pokemonItem){
+                            return <PokemonItem key={pokemonItem.name} pokemonData={pokemonItem} />
                         })}
-                    </div>                            
+                    </div>
                 </div>
-            </div> 
+            </div>
         )
     }
 }
