@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Pokemons from './Pokemons.jsx'
 import PokemonCard from './PokemonCard.jsx'
-import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class Main extends Component {  
     render(){
@@ -13,16 +13,19 @@ class Main extends Component {
                     <div></div>
                     <div></div>
                 </div> */}
-                <Switch>
-                    {/* 
-                        Routes registered, we can use them where we want 
-                    */}
-                    <Route path="/" component={ Pokemons } exact/>
-                    <Route path="/PokemonCard" component={ PokemonCard }/>
-                    {/* 
-                        Implement 'Error' view
-                    */}
-                </Switch>
+                <Router>
+                    <Switch>
+                        {/* 
+                            Routes registered, we can use them where we want 
+                        */}
+                        <Route path="/" component={ Pokemons } exact/>
+                        <Route path="/PokemonCard" component={ PokemonCard }/>
+                        {/* 
+                            Implement 'Error' view
+                            <Route component={Error}/>
+                        */}
+                    </Switch>
+                </Router>
               </div>
             </main>
         )

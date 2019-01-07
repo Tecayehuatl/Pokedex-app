@@ -4,9 +4,6 @@ import Main from "../presentational/Main.jsx"
 import Footer from "../presentational/Footer.jsx"
 
 class Wrapper extends Component{
-    constructor(){
-        super()
-    }
 
     render(){
         return(
