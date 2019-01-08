@@ -14,7 +14,7 @@ class Main extends Component {
                     <Switch>
                         {/*  Routes registered, we can use them where we want */}
                         <Route path="/" component={ Pokemons } exact/>
-                        <Route path="/pokemon-card/:pokemonName" component={ PokemonCard }/>
+                        <Route path="/pokemon-card" component={ PokemonCard }/>
                         <Route component={ ErrorPage } />
                     </Switch>
                 </Router>
