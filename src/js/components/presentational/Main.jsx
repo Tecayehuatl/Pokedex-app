@@ -5,7 +5,7 @@ import Pokemons from './Pokemons.jsx'
 import PokemonCard from './PokemonCard.jsx'
 import ErrorPage from './Error.jsx'
 
-class Main extends Component {  
+class Main extends Component {
     render(){
         return(
             <main className="container o-main">
