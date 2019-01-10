@@ -98,7 +98,7 @@ animation-delay: 0;
 }
 
 .c-pokedex{
-    
+    margin-top: 1em;
     .c-left-side{
         height: 360px;
         max-height: 360px;
@@ -134,6 +134,95 @@ animation-delay: 0;
         border-radius: 51%;
         top: 6px;
         left: 13px;
+        box-shadow: 0 0 13px #000;
+        &:before{
+            content: "";
+            width: 30px;
+            height: 15px;
+            opacity: 0.4;
+            position: absolute;
+            transform: translate(-50%, -104%);
+            background-color: $blanco;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+        }
+    }
+
+    .c-main-screen{
+        background-color: $gris-rata;
+        width: 80%;
+        height: 190px;
+        position: relative;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 1.5em;
+        padding: 1em;
+    }
+
+    .c-main-screen__screen{
+        width: 90%;
+        height: 70%;
+        background-color: $blanco;
+        border: 2px solid #000;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+    .c-poke-button{
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        background-color: $rojo-fuerte-dark;
+        border-radius: 50%;
+        background: linear-gradient(324deg, rgba(0,0,0,1) 0%, rgba(128,0,0,1) 48%, rgba(128,0,0,1) 69%, orange 90%); 
+
+        &.c-poke-button--blue{
+            background: linear-gradient(324deg, rgba(0,0,0,1) 0%, $azul-oceano 48%, $azul-oceano 90%); 
+            border: 2px solid $blanco;
+        }
+
+        &.c-poke-button--big{
+            height: 45px;
+            width: 45px;
+        }
+    }
+
+    .c-left-footer{
+        position: relative;
+        top: 68px;
+    }
+    
+    .c-footer-controls{
+        margin-left: 3em;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .c-poke-controls{
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    .c-cross-button{
+        cursor: pointer;
+        height: 60px;
+        width: 20px;
+        background-color: #000;
+        position: relative;
+        border-radius: 5px;
+        &:before{
+            content: "";
+            height: 20px;
+            border-radius: 5px;
+            width: 60px;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }   
     }
 
     .c-right-side{
@@ -142,6 +231,15 @@ animation-delay: 0;
 
 }
 
+.c-link{
+    color: $blanco;
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+
+.u-capitalize{
+    text-transform: capitalize;
+}
 @keyframes lds-facebook {
 0% {
     top: 6px;
@@ -188,18 +286,24 @@ animation-delay: 0;
         .c-right-side{
             background-color: $rojo-fuerte;
             border-radius: 0 .5em 2.5em 0;
+            bottom: 0;
             box-shadow: -12px 8px 0 $rojo-fuerte-dark;
             display: block;
             height: 320px;
+            padding: 1em;
             position: absolute;
-            bottom: 0;
             right: 0;
             max-width: 400px;
             width: 400px;
             z-index: -3;
         }
-        .c-left-header{
-        
+        .c-reader{
+            border-radius: 5px;
+            width: 80%;
+            height: 80%;
+            background-image: linear-gradient(to top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+            margin: 0 auto;
+            padding: .5em;
         }
     }
 }
