@@ -97,6 +97,51 @@ animation-delay: 0;
     }
 }
 
+.c-pokedex{
+    
+    .c-left-side{
+        height: 360px;
+        max-height: 360px;
+        background-color: $rojo-fuerte;
+        border-radius: 1em .5em .5em  3em;
+        box-shadow: -8px 8px 0 $rojo-fuerte-dark;
+
+    }
+   
+    .c-left-header{
+        height: 40px;
+        background-color: $rojo-fuerte-dark;
+        border-radius: 1em .5em 0  0;
+        position: relative;
+        &:before{
+            content: "";
+            height: 67px;
+            width: 220px;
+            background-color: $rojo-fuerte-dark;
+            position: absolute;
+            z-index: 3;
+            border-radius: 1em 0px 4em 0;
+        }
+    }
+
+    .c-sensor{
+        background-color: #50e1ef;
+        height: 50px;
+        width: 50px;
+        border: 4px solid $blanco;
+        position: relative;
+        z-index: 4;
+        border-radius: 51%;
+        top: 6px;
+        left: 13px;
+    }
+
+    .c-right-side{
+        display: none;
+    }
+
+}
+
 @keyframes lds-facebook {
 0% {
     top: 6px;
@@ -132,4 +177,29 @@ animation-delay: 0;
         min-height: 140px;
     }
 
+    .c-pokedex{
+        display: flex;
+        position: relative;
+        width: 800px;
+        .c-left-side{
+            max-width: 400px;
+            width: 400px;
+        }
+        .c-right-side{
+            background-color: $rojo-fuerte;
+            border-radius: 0 .5em 2.5em 0;
+            box-shadow: -12px 8px 0 $rojo-fuerte-dark;
+            display: block;
+            height: 320px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-width: 400px;
+            width: 400px;
+            z-index: -3;
+        }
+        .c-left-header{
+        
+        }
+    }
 }
