@@ -160,14 +160,24 @@ animation-delay: 0;
         border-radius: 1.5em;
         padding: 1em;
     }
-
+    
     .c-main-screen__screen{
         width: 90%;
         height: 70%;
         background-color: $blanco;
         border: 2px solid #000;
         margin: 0 auto;
+        text-align: center;
         border-radius: 5px;
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .c-main-screen__img{
+        max-width: 90px;
+        align-self: center;
     }
 
     .c-poke-button{

@@ -9,6 +9,7 @@ class PokemonCard extends Component{
         this.state = {
             name: this.props.location.state.pokemonName.name,
             url: this.props.location.state.pokemonName.url,
+            srcImage: '',
             abilitiesLength: 0,
             weight: 0,
             types: []
@@ -19,10 +20,14 @@ class PokemonCard extends Component{
             .then(response => {
                 console.log(response.data)
                 let data = response.data
+                let srcNotPokemonImageFound = '../../../../assets/img/not-found.jpg'
+                let srcImage = data.sprites.front_default !== undefined ? data.sprites.front_default :  srcNotPokemonImageFound
+                
                 this.setState({
                     abilitiesLength: data.abilities.length || 0,
                     weight: data.weight || 0,
-                    types: data.types
+                    types: data.types,
+                    srcImage: srcImage
                 })
             })
             .catch(response => {console.log(`Error ${response}`)})
@@ -32,6 +37,8 @@ class PokemonCard extends Component{
         return(
             <div>
                 <Link className="c-link" to="/"><span className="bs bs-home"></span> Regresar</Link>
+                <hr/>
+                <h1>Pokédex</h1>
                 <div className="c-pokedex">
                     <div className="c-left-side">
                         <div className="c-left-header">
@@ -41,7 +48,7 @@ class PokemonCard extends Component{
                         <div className="c-left-body">
                             <div className="c-main-screen">
                                 <div className="c-main-screen__screen">
-                                    <img className="c-main-screen__img" src="" />
+                                    <img className="c-main-screen__img" src={this.state.srcImage} />
                                 </div>
                                 <div className="c-poke-controls">
                                     <div className="c-poke-button"></div>
