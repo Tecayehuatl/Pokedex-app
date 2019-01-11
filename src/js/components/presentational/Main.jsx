@@ -10,14 +10,12 @@ class Main extends Component {
         return(
             <main className="container o-main">
               <div>
-                <Router>
-                    <Switch>
-                        {/*  Routes registered, we can use them where we want */}
-                        <Route path="/" component={ Pokemons } exact/>
-                        <Route path="/pokemon-card" component={ PokemonCard }/>
-                        <Route component={ ErrorPage } />
-                    </Switch>
-                </Router>
+                <Switch>
+                    {/*  Routes registered, we can use them where we want */}
+                    <Route path="/" component={ Pokemons } exact/>
+                    <Route path="/pokemon-card" component={ PokemonCard }/>
+                    <Route component={ ErrorPage } />
+                </Switch>
               </div>
             </main>
         )

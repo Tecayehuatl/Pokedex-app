@@ -1,36 +1,33 @@
 import React, {Component} from 'react'
-import api from '../../../../api/index'
 import PokemonItem from './PokemonItem.jsx'
+import axios from 'axios'
 
 class Pokemons extends Component{
     constructor(){
         super()
         this.state = {
             pokemonList: [],
-            isLoaded: false
+            isLoaded: false,
         }
     }
 
     componentDidMount(){
-        /*
-            Asynchronous function, it simulates a function that takes two seconds fetching data
-         */
-        api.getPokemons((result)=> {
-            this.setState({
-                pokemonList: result.results,
-                isLoaded: true
+        axios.get('https://pokeapi.co/api/v2/pokemon/')
+            .then(response => {
+                this.setState({
+                    pokemonList: response.data.results,
+                    isLoaded: true
+                })
             })
-        })
+            .catch(response => console.log(response))
     }
 
     render(){
         return(
             <div className="row">
                 <div className="col-12">
-                    {/*
-                        Hide this loading asset when api is done
-                    */}
-                    <div className="lds-facebook" >
+                  
+                     <div className="lds-facebook" style={this.state.isLoaded === false ? {display: 'block'} : { display: 'none'}}>
                         <div></div>
                         <div></div>
                         <div></div>

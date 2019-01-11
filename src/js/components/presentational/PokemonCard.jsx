@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-//import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -18,7 +17,6 @@ class PokemonCard extends Component{
     componentDidMount(){
         axios.get(this.state.url)
             .then(response => {
-                console.log(response.data)
                 let data = response.data
                 let srcNotPokemonImageFound = '../../../../assets/img/not-found.jpg'
                 let srcImage = data.sprites.front_default !== undefined ? data.sprites.front_default :  srcNotPokemonImageFound
@@ -33,7 +31,13 @@ class PokemonCard extends Component{
             .catch(response => {console.log(`Error ${response}`)})
     }
     render(){
-        
+        let types;
+        if(this.state.types !== undefined) {
+            types = this.state.types.map((type, index) => {
+                return   <strong key={index}><span> {type.type.name}, </span></strong>
+            })
+        } else { types = `No se encontraron tipos de ${this.state.name}`}
+
         return(
             <div>
                 <Link className="c-link" to="/"><span className="bs bs-home"></span> Regresar</Link>
@@ -66,9 +70,9 @@ class PokemonCard extends Component{
                     <div className="c-right-side">
                         <div className="c-reader">
                             <h2 className="u-capitalize"><span className="bs bs-info"></span> {this.state.name}</h2>
-                            <p>Número de habilidades de {this.state.name}: {this.state.abilitiesLength}</p>
-                            <p>Peso: {this.state.weight} Kg.</p>
-                            {/* <p>Tipos: { this.state.types.map(item => <span>{item}</span>)}</p> */}
+                            <p>Número de habilidades de <em>{this.state.name}</em>: <strong>{this.state.abilitiesLength}</strong></p>
+                            <p>Peso: <strong>{this.state.weight} Kg.</strong></p>
+                            <p>Tipos: <span>{types}</span></p>
                         </div>
                     </div>
                 </div>
